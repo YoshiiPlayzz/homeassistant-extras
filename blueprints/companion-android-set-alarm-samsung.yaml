@@ -38,7 +38,6 @@ sequence:
     device_id: !input notify_device
     message: "command_activity"
     data:
-      message: "command_activity"
       data:
         intent_package_name: com.sec.android.app.clockpackage
         intent_action: android.intent.action.SET_ALARM
