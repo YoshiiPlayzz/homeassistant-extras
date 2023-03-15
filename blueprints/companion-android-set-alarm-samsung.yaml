@@ -83,5 +83,5 @@ sequence:
       intent_extras: |
         {% set timelist = timeinput.split(':') %}
         {% set timehour = timelist[0] %}
-        {% set timemin = timelist[1] %} 
-        "android.intent.extra.alarm.HOUR:{{timehour}},android.intent.extra.alarm.MINUTES:{{timemin}},android.intent.extra.alarm.MESSAGE:{{message}},android.intent.extra.alarm.VIBRATE:{{vibrate}},android.intent.extra.alarm.SKIP_UI:{{skip_ui}}"
+        {% set timemin = timelist[1] %}
+        android.intent.extra.alarm.HOUR:{{timehour}},android.intent.extra.alarm.MINUTES:{{timemin}},android.intent.extra.alarm.MESSAGE:{{message}},android.intent.extra.alarm.VIBRATE:{{vibrate}},android.intent.extra.alarm.SKIP_UI:{{skip_ui}}
