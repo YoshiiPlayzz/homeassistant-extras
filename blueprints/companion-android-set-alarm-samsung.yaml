@@ -25,16 +25,10 @@ blueprint:
       name: Vibrate
       description: A boolean specifying whether to vibrate for this alarm.
       selector:
-        boolean:
-    message:
-      name: Message
-      description: A custom message to identify the alarm.
-      selector:
-        text:           
+        boolean:          
 mode: restart
 variables:
   timeinput: !input command_choice
-  message: !input message
   vibrate: !input vibrate
   skip_ui: !input skip_ui
 sequence:
@@ -46,5 +40,5 @@ sequence:
       data:
         intent_package_name: com.sec.android.app.clockpackage
         intent_action: android.intent.action.SET_ALARM
-        intent_extras: android.intent.extra.alarm.HOUR:{{timeinput.split(":")[0]}},android.intent.extra.alarm.MINUTES:{{timeinput.split(":")[1]}},android.intent.extra.alarm.MESSAGE:{{message}},android.intent.extra.alarm.VIBRATE:{{vibrate}},android.intent.extra.alarm.SKIP_UI:{{skip_ui}}
+        intent_extras: android.intent.extra.alarm.HOUR:{{timeinput.split(":")[0]}},android.intent.extra.alarm.MINUTES:{{timeinput.split(":")[1]}},android.intent.extra.alarm.VIBRATE:{{vibrate}},android.intent.extra.alarm.SKIP_UI:{{skip_ui}}
       message: "command_activity"
