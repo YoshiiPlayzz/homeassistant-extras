@@ -1,4 +1,3 @@
-## inspired by https://github.com/stboch/homeassistant-blueprints/blob/203573805074ce9b5454a5e74d17c68c50573cf6/mobile_app_android_alarm.yaml
 blueprint:
   name: Set Alarm for Samsung Devíces
   description: Set an alarm with help of the homeassistant companion app
