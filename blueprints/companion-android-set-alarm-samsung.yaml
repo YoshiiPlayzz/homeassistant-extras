@@ -37,15 +37,14 @@ variables:
   message: !input message
   vibrate: !input vibrate
   skip_ui: !input skip_ui
-
 sequence:
   - alias: "Send notification"
     domain: mobile_app
     type: notify
     device_id: !input notify_device
-    message: "command_activity"
     data:
-      intent_package_name: "com.sec.android.app.clockpackage"
-      intent_action: "android.intent.action.SET_ALARM"
-      intent_extras: "android.intent.extra.alarm.HOUR:{{timeinput.split(":")[0]}},android.intent.extra.alarm.MINUTES:{{timeinput.split(":")[1]}},android.intent.extra.alarm.MESSAGE:{{message}},android.intent.extra.alarm.VIBRATE:{{vibrate}},android.intent.extra.alarm.SKIP_UI:{{skip_ui}}"
-    
+      data:
+        intent_package_name: "com.sec.android.app.clockpackage"
+        intent_action: "android.intent.action.SET_ALARM"
+        intent_extras: "android.intent.extra.alarm.HOUR:{{timeinput.split(":")[0]}},android.intent.extra.alarm.MINUTES:{{timeinput.split(":")[1]}},android.intent.extra.alarm.MESSAGE:{{message}},android.intent.extra.alarm.VIBRATE:{{vibrate}},android.intent.extra.alarm.SKIP_UI:{{skip_ui}}"
+      message: "command_activity"
