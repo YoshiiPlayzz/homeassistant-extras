@@ -1,8 +1,7 @@
 ## inspired by https://github.com/stboch/homeassistant-blueprints/blob/203573805074ce9b5454a5e74d17c68c50573cf6/mobile_app_android_alarm.yaml
 blueprint:
   name: Set Alarm for Samsung Devíces
-  description: >-
-    Set an alarm with help of the homeassistant companion app
+  description: Set an alarm with help of the homeassistant companion app
   domain: script
   source_url: https://github.com/YoshiiPlayzz/homeassistant-extras/blob/main/blueprints/companion-android-set-alarm-samsung.yaml
   input:
@@ -19,43 +18,17 @@ blueprint:
         time:
     show_ui:
       name: Show UI
-      description: >-
-        A boolean specifying whether the responding app should skip its UI when setting the alarm. 
-        If true, the app should bypass any confirmation UI and simply set the specified alarm
+      description: A boolean specifying whether the responding app should skip its UI when setting the alarm. If true, the app should bypass any confirmation UI and simply set the specified alarm
       selector:
         boolean:
     vibrate:
       name: Vibrate
-      description: >-
-        A boolean specifying whether to vibrate for this alarm.
+      description: A boolean specifying whether to vibrate for this alarm.
       selector:
         boolean:
-    select_days:
-      name: Select Days
-      description: >- 
-        An ArrayList including each week day on which this alarm should be repeated. 
-      selector:
-        select:
-          multiple: true
-          options: 
-            - label: Monday
-              value: 1
-            - label: Thuesday
-              value: 2
-            - label: Wednesday
-              value: 3
-            - label: Thursday
-              value: 4
-            - label: Friday
-              value: 5
-            - label: Saturday
-              value: 6
-            - label: Sunday
-              value: 7   
     message:
       name: Message
-      description: >- 
-        A custom message to identify the alarm.
+      description: A custom message to identify the alarm.
       selector:
         text:
         
@@ -67,7 +40,6 @@ variables:
   message: !input message
   vibrate: !input vibrate
   show_ui: !input show_ui
-  select_days: !input select_days
 ## These are used to quickly change a blueprint to support every different notification commands
   message: "command_activity"
 
